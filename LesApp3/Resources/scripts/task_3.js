@@ -1,3 +1,5 @@
+// old
+/*
 let products = [
     {
         name: "Бумага офисная А4, 80 г/м2, 500 л",
@@ -14,6 +16,14 @@ let products = [
         price: 12.5,
         ordered: 0
     }
+];
+*/
+
+// new
+let products = [
+    GetProduct("Бумага офисная А4, 80 г/м2, 500 л", 280.25, 0),
+    GetProduct("Биндеры для бумаги 51 мм", 56, 0),
+    GetProduct("Ручка шариковая синяя", 12.5, 0),
 ];
 
 // цикл для получения количества покупаемых продуктов
@@ -36,4 +46,16 @@ let isFreeShipping = totalPrice > 1000;
 if (isFreeShipping) // иногда в усолвии используется только одна переменная.
 {
     alert("Доставка будет бесплатной.");
+}
+
+// фабричний метод
+// name - назва товару
+// price - ціна товару
+// ordered - кількість одиниць, які хочуть замовити
+function GetProduct(name, price, ordered) {
+    return {
+        name,
+        price,
+        ordered,
+    };
 }
